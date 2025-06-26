@@ -1,0 +1,93 @@
+/* ОБНУЛЕНИЕ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Цвета */
+  --main-color: #17301A;
+  --accent-color: #CF613C;
+  --bg-color: #FEFBF6;
+  --bg2-color: #FBEECC;
+
+  /* Шрифты */
+  --font-primary: "Cormorant Garamond", sans-serif;
+  --font-secondary: "EB Garamond", sans-serif;
+}
+
+body {
+  background: var(--bg-color);
+  font-family: Lato, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+  position: relative;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+  color: var(--main-color);
+  font-family: var(--font-secondary);
+  font-size: 20px;
+}
+
+.nav-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+}
+
+.nav-logo img {
+  height: 100%;
+  width: auto;
+}
+
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 25px; 
+  color: var(--main-color);
+  padding: 8px;
+  transition: color 0.3s;
+}
+
+.icon-btn:hover {
+  color: var(--accent-color);
+}
