@@ -20,6 +20,9 @@ function switchToClean() {
     const statisticValues = document.querySelectorAll('.statistic-item__value');
 
     document.querySelector('.hover-text').textContent = 'Игнорировать?';
+    document.querySelector('.clean-btn--left').style.display = 'inline-block';
+    document.querySelector('.clean-btn--right').style.display = 'inline-block';
+
 
     // Новый фон (гладкий, мягкий градиент)
     section.style.transition = 'background 1s ease-in-out';
@@ -91,6 +94,10 @@ function switchToPolluted() {
     const statisticValues = document.querySelectorAll('.statistic-item__value');
 
     document.querySelector('.hover-text').textContent = 'Действуй!';
+    document.querySelector('.clean-btn--left').style.display = 'none';
+    document.querySelector('.clean-btn--right').style.display = 'none';
+
+
 
 
     // Фон: возвращаем на тёплый загрязнённый

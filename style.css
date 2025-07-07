@@ -187,6 +187,17 @@ a:hover {
   position: relative; 
 }
 
+.play-icon {
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+
 .action-button {
   width: 100px;
   height: 100px;
@@ -222,4 +233,37 @@ a:hover {
 
 .action-button:hover .hover-text {
   opacity: 1;
+}
+
+.clean-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px 60px;
+  font-size: 18px;
+  font-family: var(--font-secondary);
+  color: white;
+  background-color: rgba(56, 71, 131, 1);
+  border: 3px solid transparent; 
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.clean-btn:hover {
+  background-color: rgba(56, 71, 131, 0);
+  color: #384783;
+  border-color: #384783;
+}
+
+
+.clean-btn--left {
+  left: 150px; 
+}
+
+.clean-btn--right {
+  right: 150px; 
 }
