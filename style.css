@@ -32,7 +32,7 @@ a:hover {
   color: var(--accent-color);
 }
 
-/* navigation */
+/* Navigation */
 .nav {
   display: flex;
   justify-content: space-between;
@@ -267,3 +267,41 @@ a:hover {
 .clean-btn--right {
   right: 150px; 
 }
+
+/* About us */
+.section-about {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 50px 20px;
+}
+
+.left-us {
+  max-width: 280px;}
+
+.about__title {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-top: 50px;
+}
+
+.portrait{
+  width: 280px;
+  height: 360px;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.right-us{
+  font-family: var(--font-secondary);
+  text-align: justify;
+  font-size: 20px;
+  color: var(--accent-color);
+  max-width: 800px;
+  margin-top: 200px;
+}
+
