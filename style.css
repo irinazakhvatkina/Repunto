@@ -305,3 +305,70 @@ a:hover {
   margin-top: 200px;
 }
 
+/* Reviews */
+.reviews-section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.reviews__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.reviews__title {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-top: 50px;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  width: 450px;
+  height: auto;
+  background-color: var(--bg2-color);
+  border: var(--main-color) 2px solid;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.review-avatar {
+  margin-top: -50px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  flex-shrink: 0; 
+}
+
+
+.review__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--font-secondary);
+  color: var(--main-color);
+}
+
+.review-message {
+  color: var(--main-color);
+  font-size: 20px;
+}
+
+.review-author  {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+  text-align: right;
+}
