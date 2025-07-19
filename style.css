@@ -352,7 +352,6 @@ a:hover {
   flex-shrink: 0; 
 }
 
-
 .review__content {
   display: flex;
   flex-direction: column;
@@ -371,4 +370,87 @@ a:hover {
   font-weight: bold;
   margin-top: 5px;
   text-align: right;
+}
+
+/* Review Form */
+.review-form {
+  display: grid;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+  margin: 50px;
+  place-items: center;
+}
+
+.review-form__header {
+  font-family: var(--font-primary);
+  color: var(--main-color);
+  font-weight: bold;
+  text-align: center;
+  gap: 15px;
+}
+
+.review-form__title {
+  font-size: 40px;
+}
+
+.review-form__subtitle {
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.review-form__body {
+  font-family: var(--font-primary);
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.review-form__group {
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.review-form__label{
+  font-size: 20px;
+}
+.review-form__input {
+  width: 200px;
+  border: var(--main-color) 1px solid;
+  border-radius: 15px;
+  background-color: var(--bg2-color);
+  padding: 10px 15px;
+}
+
+.review-pole {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.review-form__textarea {
+  width: 580px;
+  height: 100px;
+  border: var(--main-color) 1px solid;
+  border-radius: 15px;
+  background-color: var(--bg2-color);
+  padding: 10px 15px;
+}
+
+.form__submit {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.review-form__submit {
+  width: 190px;
+  height: 35px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  border-radius: 17px;
+  border: none;
+  box-shadow: 0 4px 4px rgba(44, 122, 123, 0.25);
 }

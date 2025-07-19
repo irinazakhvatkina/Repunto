@@ -137,6 +137,39 @@
       </div>
   </section>
  
+  <!-- Review Form -->
+  <div class="review-form">
+    <div class="review-form__header">
+      <h1 class="review-form__title">Оставьте свой отзыв</h1>
+      <p class="review-form__subtitle">Мы ценим каждое мнение. Вы помогаете другим сделать первый шаг.</p>
+    </div>
+  
+    <form action="/submit-review" method="post" class="review-form__body">
+      
+      <div class="review-form__group">
+        <label for="name" class="review-form__label">Имя:</label>
+        <input type="text" id="name" name="username" class="review-form__input" placeholder="Ваше имя" required> 
+        <label for="city" class="review-form__label">Город:</label>
+        <input type="text" id="city" name="city" class="review-form__input" placeholder="Ваш город">
+      </div>
+  
+      <div class="review-form__group review-pole">
+        <label for="comment" class="review-form__label">Ваш отзыв:</label> 
+        <textarea id="comment" name="comment" class="review-form__textarea" placeholder="Добавьте сюда свой отзыв" required></textarea>
+      </div>
+  
+      <div class="review-form__group review-form__checkbox-group">
+        <input type="checkbox" id="consent" name="consent" class="review-form__checkbox" required>
+        <label for="consent" class="review-form__checkbox-label">
+          Я согласен(а) на публикацию моего отзыва
+        </label>
+      </div>
+  
+      <div class="review-form__group form__submit">
+        <input type="submit" name="submit" value="Отправить отзыв" class="review-form__submit">
+      </div>
+    </form>
+  </div>
 
 
   <script src="script.js"></script>
