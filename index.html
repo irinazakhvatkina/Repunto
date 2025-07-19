@@ -17,6 +17,8 @@
         rel="stylesheet">
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+
 
   <link rel="stylesheet" href="style.css" />
   <title>Document</title>
@@ -98,11 +100,15 @@
     </div>
     <div class="right-us">
       <p>
-        <strong>Repunto</strong> — это интерактивная карта пунктов приёма вторсырья в Душанбе. Мы помогаем жителям города быстро находить, куда сдать пластик, макулатуру и металл — с актуальными адресами, графиками работы и ценами за 1 кг.
-        Проект создан с одной целью: <strong>сделать сортировку отходов удобной, а экологичный выбор — простым для каждого.</strong> <br>  <br>
+        <strong>Repunto</strong> — это интерактивная карта пунктов приёма вторсырья в Душанбе. Мы помогаем жителям
+        города быстро находить, куда сдать пластик, макулатуру и металл — с актуальными адресами, графиками работы и
+        ценами за 1 кг.
+        Проект создан с одной целью: <strong>сделать сортировку отходов удобной, а экологичный выбор — простым для
+          каждого.</strong> <br> <br>
         Название Repunto образовано от слов Recycle Point — «пункт переработки».
-        За проектом стоит Ирина, начинающий разработчик и студентка, которая решила объединить технологии и экологию, чтобы помочь своему городу стать чище и осознаннее.
-        Мы верим, что небольшие шаги, сделанные вовремя, могут привести к большим переменам. <br>  <br>
+        За проектом стоит Ирина, начинающий разработчик и студентка, которая решила объединить технологии и экологию,
+        чтобы помочь своему городу стать чище и осознаннее.
+        Мы верим, что небольшие шаги, сделанные вовремя, могут привести к большим переменам. <br> <br>
         <strong>Repunto — твоя точка старта в экологичном городе.</strong>
       </p>
     </div>
@@ -115,15 +121,17 @@
       <div class="review-card">
         <img class="review-avatar" src="Assets/profile1.jpg" alt="Profile">
         <div class="review__content">
-          <p class="review-message"> Repunto стал для меня открытием. Сдаю пластик и стекло регулярно — чувствую, что делаю хоть что-то полезное. </p>
-        <p class="review-author"> Мадина, Душанбе </p>
+          <p class="review-message"> Repunto стал для меня открытием. Сдаю пластик и стекло регулярно — чувствую, что
+            делаю хоть что-то полезное. </p>
+          <p class="review-author"> Мадина, Душанбе </p>
         </div>
       </div>
 
       <div class="review-card">
         <img class="review-avatar" src="Assets/profile2.jpg" alt="Profile">
         <div class="review__content">
-          <p class="review-message"> Очень удобно! Теперь знаю, куда сдавать вторсырье. Спасибо за такую полезную карту, обязательно буду пользоваться! </p>
+          <p class="review-message"> Очень удобно! Теперь знаю, куда сдавать вторсырье. Спасибо за такую полезную карту,
+            обязательно буду пользоваться! </p>
           <p class="review-author"> Алишер, Душанбе </p>
         </div>
       </div>
@@ -131,46 +139,93 @@
       <div class="review-card">
         <img class="review-avatar" src="Assets/profile3.jpg" alt="Profile">
         <div class="review__content">
-          <p class="review-message"> Отличная идея! Сортирую отходы и сдаю в Repunto. Надеюсь, что скоро все больше людей присоединятся. </p>
+          <p class="review-message"> Отличная идея! Сортирую отходы и сдаю в Repunto. Надеюсь, что скоро все больше
+            людей присоединятся. </p>
           <p class="review-author"> Фарзона, Душанбе </p>
         </div>
       </div>
   </section>
- 
+
   <!-- Review Form -->
   <div class="review-form">
     <div class="review-form__header">
       <h1 class="review-form__title">Оставьте свой отзыв</h1>
       <p class="review-form__subtitle">Мы ценим каждое мнение. Вы помогаете другим сделать первый шаг.</p>
     </div>
-  
+
     <form action="/submit-review" method="post" class="review-form__body">
-      
+
       <div class="review-form__group">
         <label for="name" class="review-form__label">Имя:</label>
-        <input type="text" id="name" name="username" class="review-form__input" placeholder="Ваше имя" required> 
+        <input type="text" id="name" name="username" class="review-form__input" placeholder="Ваше имя" required>
         <label for="city" class="review-form__label">Город:</label>
         <input type="text" id="city" name="city" class="review-form__input" placeholder="Ваш город">
       </div>
-  
+
       <div class="review-form__group review-pole">
-        <label for="comment" class="review-form__label">Ваш отзыв:</label> 
-        <textarea id="comment" name="comment" class="review-form__textarea" placeholder="Добавьте сюда свой отзыв" required></textarea>
+        <label for="comment" class="review-form__label">Ваш отзыв:</label>
+        <textarea id="comment" name="comment" class="review-form__textarea" placeholder="Добавьте сюда свой отзыв"
+                  required></textarea>
       </div>
-  
+
       <div class="review-form__group review-form__checkbox-group">
         <input type="checkbox" id="consent" name="consent" class="review-form__checkbox" required>
         <label for="consent" class="review-form__checkbox-label">
           Я согласен(а) на публикацию моего отзыва
         </label>
       </div>
-  
+
       <div class="review-form__group form__submit">
         <input type="submit" name="submit" value="Отправить отзыв" class="review-form__submit">
       </div>
     </form>
   </div>
 
+  <!-- Contact -->
+  <footer class="site-footer">
+    <div class="site-footer__container">
+      <div class="site-footer__top">
+        <div class="site-footer__content">
+          <h1 class="site-footer__title">Контакты</h1>
+          <p class="site-footer__text">
+            <strong>Будем на связи в социальных сетях</strong> <br>
+            Следите за нашими обновлениями, делитесь своими <br>
+            историями и задавайте вопросы — мы рядом.
+          </p>
+          <p class="site-footer__text">
+            Мы открыты к сотрудничеству и диалогу. <br>
+            Каждый ваш отклик — вклад в общее дело.
+          </p>
+        </div>
+        <div class="site-footer__socials">
+          <a href="#" class="social-link" target="_blank" aria-label="Instagram">
+            <label>Instagram</label>
+            <i class="fi fi-brands-instagram"></i>
+          </a>
+          <a href="#" class="social-link" target="_blank" aria-label="Telegram">
+            <label>Telegram</label>
+            <i class="fi fi-brands-telegram"></i>
+          </a>
+          <a href="#" class="social-link" target="_blank" aria-label="Github">
+            <label>Github</label>
+            <i class="fi fi-brands-github"></i>
+          </a>
+          <a href="#" class="social-link" target="_blank" aria-label="Linkedin">
+            <label>Linkedin</label>
+            <i class="fi fi-brands-invision"></i>
+          </a>
+          <a href="#" class="social-link" target="_blank" aria-label="Envelope">
+            <label>Envelope</label>
+            <i class="fi fi-rr-envelope"></i>
+          </a>
+        </div>
+      </div>
+      <div class="site-footer__bottom">
+        <p class="site-footer__tagline">Repunto © 2025. Сделано с заботой о планете.</p>
+        <img src="Assets/logo2.svg" alt="Repunto Logo" class="site-footer__logo">
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>

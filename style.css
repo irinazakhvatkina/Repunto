@@ -415,6 +415,7 @@ a:hover {
 .review-form__label{
   font-size: 20px;
 }
+
 .review-form__input {
   width: 200px;
   border: var(--main-color) 1px solid;
@@ -453,4 +454,83 @@ a:hover {
   border-radius: 17px;
   border: none;
   box-shadow: 0 4px 4px rgba(44, 122, 123, 0.25);
+}
+
+/* Contact */
+.site-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.site-footer__top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.site-footer__title {
+  font-family: var(--font-primary);
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.site-footer__text {
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  font-weight: normal;
+  margin: 25px 0px;
+}
+
+.site-footer__content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.site-footer__socials {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 50px;
+}
+
+.social-link {
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  position: relative;
+}
+
+.site-footer__tagline {
+  font-family: var(--font-secondary);
+  color: var(--main-color);
+  font-size: 16px;
+  flex: 1;
+  text-align: left;
+}
+
+.site-footer__logo {
+  height: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.spacer {
+  flex: 1;
 }
