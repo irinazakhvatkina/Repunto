@@ -17,6 +17,10 @@
   --font-secondary: "EB Garamond", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg-color);
   font-family: Lato, sans-serif;
