@@ -16,35 +16,40 @@
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <link rel="stylesheet" href="../style/map_style.css">
   <title>Document</title>
 </head>
-<body>
-      <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-left">
-      <a href="../index.html">Главная</a>
-      <a href="../page/map.html">Карта</a>
-      <a href="#">Блог</a>
-      <a href="../index.html#about">О нас</a>
-    </div>
+<body>  
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-left">
+        <a href="../index.html">Главная</a>
+        <a href="../page/map.html">Карта</a>
+        <a href="#">Блог</a>
+        <a href="../index.html#about">О нас</a>
+        </div>
 
-    <div class="nav-logo">
-      <img src="../Assets/logo.svg" alt="Logo">
-    </div>
+        <div class="nav-logo">
+        <img src="../Assets/logo.svg" alt="Logo">
+        </div>
 
-    <div class="nav-right">
-      <button id="theme-toggle" class="icon-btn">
-        <i class="fi fi-rr-eclipse-alt"></i>
-      </button>
-      <button class="icon-btn">
-        <i class="fi fi-rr-search"></i>
-      </button>
-    </div>
-  </nav>
+        <div class="nav-right">
+        <button id="theme-toggle" class="icon-btn">
+            <i class="fi fi-rr-eclipse-alt"></i>
+        </button>
+        <button class="icon-btn">
+            <i class="fi fi-rr-search"></i>
+        </button>
+        </div>
+    </nav>
 
+    <!-- map -->
+    <div id="map" class="map-container"></div>
 
-
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../script/map_script.js"></script>
 </body>
 </html>

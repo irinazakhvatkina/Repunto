@@ -90,3 +90,11 @@
   .icon-btn:hover {
     color: var(--accent-color);
   }
+
+  /* map */
+  .map-container {
+    height: calc(100vh - 100px); /* вычесть высоту навигации */
+    margin: 0 100px;
+    border-radius: 60px;
+  }
+  
