@@ -47,7 +47,40 @@
     </nav>
 
     <!-- map -->
-    <div id="map" class="map-container"></div>
+    <div class="map-wrapper">
+        <div id="map"></div>
+        <div class="filter-toggle" id="filterToggle"><i class="fi fi-rr-settings-sliders"></i></div>
+
+         <!-- filter -->
+        <div class="filter-panel" id="filterPanel">
+            <button class="close-filter" id="closeFilter">&times;</button>
+            <h3 class="filter-panel__title">Тип принимаемых отходов</h3>
+            <div class="filter-panel__item">
+                <label class="filter-option">
+                  <input type="checkbox" name="filter" value="metal" />
+                  <span>Металл</span>
+                </label>
+              
+                <label class="filter-option">
+                  <input type="checkbox" name="filter" value="plastic" />
+                  <span>Пластик</span>
+                </label>
+              
+                <label class="filter-option">
+                  <input type="checkbox" name="filter" value="paper" />
+                  <span>Макулатура</span>
+                </label>
+            </div>
+            <!-- filter button -->
+            <div class="filter-panel__actions">
+                <button id="clearFilters">очистить</button>
+                <button id="applyFilters">применить</button>
+            </div>
+
+        </div>
+    </div>
+
+   
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../script/map_script.js"></script>

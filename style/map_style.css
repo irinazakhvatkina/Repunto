@@ -92,9 +92,151 @@
   }
 
   /* map */
-  .map-container {
-    height: calc(100vh - 100px); /* вычесть высоту навигации */
-    margin: 0 100px;
+  .map-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+
+#map {
+    position: relative;
+    width: 1200px;
+    height: 80vh;
+    margin: 20px auto; 
+    position: relative;
+    overflow: hidden;
     border-radius: 60px;
+    z-index: 1;
   }
   
+  .filter-toggle {
+    position: absolute;
+    top: 40px;
+    left: 150px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* filter */
+  .filter-panel__title {
+    font-family: var(--font-primary);
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+.filter-panel__item {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+.filter-panel {
+    position: absolute;
+    top: 30px;
+    left: 150px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    padding: 0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 3;
+    transition: all 0.4s ease;
+  }
+  
+  .filter-panel.active {
+    width: 330px;
+    height: auto;
+    padding: 20px;
+  }
+  
+.close-filter {
+    width: 30px;
+    height: 30px;
+    background: none;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+}
+
+.filter-option {
+    background-color: var(--bg2-color);
+    color: var(--main-color);
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 10px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+    user-select: none;
+    position: relative;
+}
+  
+.filter-option input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;    
+    pointer-events: none;
+}
+  
+.filter-option:has(input[type="checkbox"]:checked) {
+    background-color: var(--main-color);
+    color: var(--bg2-color); 
+}
+
+/* filter button */
+.filter-panel__actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .filter-panel__actions button {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: var(--font-primary);
+    background-color: transparent; 
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    min-width: 120px; 
+  }
+  
+  #clearFilters {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 3px solid var(--accent-color);
+  }
+  
+  #clearFilters:hover {
+    background-color: rgba(131, 84, 56, 0); 
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+
+  #applyFilters {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: 3px solid var(--accent-color);
+  }
+  
+  #applyFilters:hover {
+    background-color: rgba(131, 84, 56, 0); 
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
