@@ -1,73 +1,73 @@
 const map = L.map('map', {
-  center: [38.5598, 68.7870],
-  zoom: 13,
-  zoomControl: false
+    center: [38.5598, 68.7870],
+    zoom: 13,
+    zoomControl: false
 });
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
+    attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
 const recyclingPoints = [
-  {
-      name: 'Пункт приема "ЭкоЦентр"',
-      location: [38.5650, 68.7900],
-      type: ['plastic', 'paper', 'metal'],
-      address: 'Улица Мира, 15',
-      description: 'Принимаем пластик, макулатуру и металл.',
-      details: 'Время работы: 9:00-18:00. Пластик: 5 сомони/кг, Макулатура: 2 сомони/кг, Металл: 10 сомони/кг.',
-      photos: [
-        '../Assets/point/urno.jpg' // Изменено
-      ],
-      contacts: {
-          phone: '+992 93 123 4567',
-          website: 'https://ecocenter.example.com',
-          social: 'https://instagram.com/ecocenter'
-      }
-  },
-  {
-      name: 'Пункт "Зеленый Город"',
-      location: [38.5500, 68.7800],
-      type: ['plastic'],
-      address: 'Проспект Рудаки, 120',
-      description: 'Только пластик. Удобный заезд.',
-      details: 'Работаем ежедневно с 8:00 до 17:00. Пластик: 4.5 сомони/кг.',
-      photos: [
-        '../Assets/point/beta.jpg'
-      ],
-      contacts: {
-          phone: '+992 94 765 4321'
-      }
-  },
-  {
-      name: 'Металлоприемка "Сталь"',
-      location: [38.5700, 68.7750],
-      type: ['metal'],
-      address: 'Улица Исмоили Сомони, 5',
-      description: 'Прием черных и цветных металлов.',
-      details: 'Круглосуточно. Металл: от 8 до 15 сомони/кг в зависимости от типа.',
-      photos: ['../Assets/point/partov.jpg'],
-      contacts: {
-          phone: '+992 90 987 6543'
-      }
-  },
-  {
-      name: 'Бумажный Сбор',
-      location: [38.5450, 68.7950],
-      type: ['paper'],
-      address: 'Улица Айнӣ, 8',
-      description: 'Принимаем картон, газеты, книги.',
-      details: 'По будням с 10:00 до 16:00. Макулатура: 2.5 сомони/кг.',
-      photos: [
-          '../Assets/point/partov.jpg',
-          '../Assets/point/urno.jpg',
-          '../Assets/point/beta.jpg'
-      ],
-      contacts: {
-          phone: '+992 91 111 2233',
-          website: 'https://paper-sbor.example.com'
-      }
-  }
+    {
+        name: 'Пункт приема "ЭкоЦентр"',
+        location: [38.5650, 68.7900],
+        type: ['plastic', 'paper', 'metal'],
+        address: 'Улица Мира, 15',
+        description: 'Принимаем пластик, макулатуру и металл.',
+        details: 'Время работы: 9:00-18:00. Пластик: 5 сомони/кг, Макулатура: 2 сомони/кг, Металл: 10 сомони/кг.',
+        photos: [
+            '../Assets/point/urno.jpg' // Изменено
+        ],
+        contacts: {
+            phone: '+992 93 123 4567',
+            website: 'https://ecocenter.example.com',
+            social: 'https://instagram.com/ecocenter'
+        }
+    },
+    {
+        name: 'Пункт "Зеленый Город"',
+        location: [38.5500, 68.7800],
+        type: ['plastic'],
+        address: 'Проспект Рудаки, 120',
+        description: 'Только пластик. Удобный заезд.',
+        details: 'Работаем ежедневно с 8:00 до 17:00. Пластик: 4.5 сомони/кг.',
+        photos: [
+            '../Assets/point/beta.jpg'
+        ],
+        contacts: {
+            phone: '+992 94 765 4321'
+        }
+    },
+    {
+        name: 'Металлоприемка "Сталь"',
+        location: [38.5700, 68.7750],
+        type: ['metal'],
+        address: 'Улица Исмоили Сомони, 5',
+        description: 'Прием черных и цветных металлов.',
+        details: 'Круглосуточно. Металл: от 8 до 15 сомони/кг в зависимости от типа.',
+        photos: ['../Assets/point/partov.jpg'],
+        contacts: {
+            phone: '+992 90 987 6543'
+        }
+    },
+    {
+        name: 'Бумажный Сбор',
+        location: [38.5450, 68.7950],
+        type: ['paper'],
+        address: 'Улица Айнӣ, 8',
+        description: 'Принимаем картон, газеты, книги.',
+        details: 'По будням с 10:00 до 16:00. Макулатура: 2.5 сомони/кг.',
+        photos: [
+            '../Assets/point/partov.jpg',
+            '../Assets/point/urno.jpg',
+            '../Assets/point/beta.jpg'
+        ],
+        contacts: {
+            phone: '+992 91 111 2233',
+            website: 'https://paper-sbor.example.com'
+        }
+    }
 ];
 
 const markers = L.layerGroup().addTo(map);
@@ -89,11 +89,11 @@ function addMarkers(points) {
                     <div id="info-tab-${marker._leaflet_id}" class="tab-pane active">
                         <p><strong>Адрес:</strong> ${point.address}</p>
                         <p><strong>Принимает:</strong> ${point.type.map(t => {
-                            if (t === 'metal') return 'Металл';
-                            if (t === 'plastic') return 'Пластик';
-                            if (t === 'paper') return 'Макулатура';
-                            return t;
-                        }).join(', ')}</p>
+            if (t === 'metal') return 'Металл';
+            if (t === 'plastic') return 'Пластик';
+            if (t === 'paper') return 'Макулатура';
+            return t;
+        }).join(', ')}</p>
                         <p>${point.description}</p>
                         <p>${point.details || 'Дополнительная информация отсутствует.'}</p>
                     </div>
@@ -111,7 +111,7 @@ function addMarkers(points) {
             maxWidth: 300
         });
 
-        marker.on('popupopen', function() {
+        marker.on('popupopen', function () {
             const popupElement = this.getPopup().getElement();
 
             if (typeof this._currentSlideIndex === 'undefined') {
@@ -122,7 +122,7 @@ function addMarkers(points) {
             const tabPanes = popupElement.querySelectorAll('.tab-pane');
 
             tabButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     tabPanes.forEach(pane => pane.classList.remove('active'));
 
@@ -149,7 +149,7 @@ function addMarkers(points) {
             }
             const activeTabButton = popupElement.querySelector('.tab-button.active');
             if (activeTabButton && activeTabButton.dataset.tab === 'photo') {
-                 showSlide(marker._currentSlideIndex, marker._leaflet_id, popupElement);
+                showSlide(marker._currentSlideIndex, marker._leaflet_id, popupElement);
             }
         });
     });
@@ -233,84 +233,84 @@ const checkboxes = filterPanel.querySelectorAll('input[type="checkbox"]');
 const STORAGE_KEY = 'selectedFilters';
 
 function loadFilters() {
-  const saved = localStorage.getItem(STORAGE_KEY);
-  if (!saved) return;
-  const selected = JSON.parse(saved);
-  checkboxes.forEach(chk => {
-      chk.checked = selected.includes(chk.value);
-  });
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return;
+    const selected = JSON.parse(saved);
+    checkboxes.forEach(chk => {
+        chk.checked = selected.includes(chk.value);
+    });
 }
 
 function saveFilters() {
-  const selected = [];
-  checkboxes.forEach(chk => {
-      if (chk.checked) selected.push(chk.value);
-  });
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(selected));
+    const selected = [];
+    checkboxes.forEach(chk => {
+        if (chk.checked) selected.push(chk.value);
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(selected));
 }
 
 function clearFilters() {
-  checkboxes.forEach(chk => (chk.checked = false));
+    checkboxes.forEach(chk => (chk.checked = false));
 }
 
 filterToggle.addEventListener('click', () => {
-  loadFilters();
-  filterPanel.classList.add('active');
-  filterToggle.style.display = 'none';
+    loadFilters();
+    filterPanel.classList.add('active');
+    filterToggle.style.display = 'none';
 });
 
 closeFilter.addEventListener('click', () => {
-  filterPanel.classList.remove('active');
-  setTimeout(() => {
-      filterToggle.style.display = 'block';
-  }, 400);
+    filterPanel.classList.remove('active');
+    setTimeout(() => {
+        filterToggle.style.display = 'block';
+    }, 400);
 });
 
 clearFiltersBtn.addEventListener('click', () => {
-  clearFilters();
-  localStorage.removeItem(STORAGE_KEY);
-  addMarkers(recyclingPoints);
+    clearFilters();
+    localStorage.removeItem(STORAGE_KEY);
+    addMarkers(recyclingPoints);
 });
 
 applyFiltersBtn.addEventListener('click', () => {
-  saveFilters();
+    saveFilters();
 
-  const selectedFilters = [];
-  checkboxes.forEach(chk => {
-      if (chk.checked) selectedFilters.push(chk.value);
-  });
+    const selectedFilters = [];
+    checkboxes.forEach(chk => {
+        if (chk.checked) selectedFilters.push(chk.value);
+    });
 
-  let filteredPoints = [];
-  if (selectedFilters.length === 0) {
-      filteredPoints = recyclingPoints;
-  } else {
-      filteredPoints = recyclingPoints.filter(point =>
-          selectedFilters.some(filter => point.type.includes(filter))
-      );
-  }
+    let filteredPoints = [];
+    if (selectedFilters.length === 0) {
+        filteredPoints = recyclingPoints;
+    } else {
+        filteredPoints = recyclingPoints.filter(point =>
+            selectedFilters.some(filter => point.type.includes(filter))
+        );
+    }
 
-  addMarkers(filteredPoints);
+    addMarkers(filteredPoints);
 
-  filterPanel.classList.remove('active');
-  setTimeout(() => {
-      filterToggle.style.display = 'block';
-  }, 400);
+    filterPanel.classList.remove('active');
+    setTimeout(() => {
+        filterToggle.style.display = 'block';
+    }, 400);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadFilters();
-  const selectedFiltersOnLoad = [];
-  checkboxes.forEach(chk => {
-      if (chk.checked) selectedFiltersOnLoad.push(chk.value);
-  });
+    loadFilters();
+    const selectedFiltersOnLoad = [];
+    checkboxes.forEach(chk => {
+        if (chk.checked) selectedFiltersOnLoad.push(chk.value);
+    });
 
-  let initialFilteredPoints = [];
-  if (selectedFiltersOnLoad.length === 0) {
-      initialFilteredPoints = recyclingPoints;
-  } else {
-      initialFilteredPoints = recyclingPoints.filter(point =>
-          selectedFiltersOnLoad.some(filter => point.type.includes(filter))
-      );
-  }
-  addMarkers(initialFilteredPoints);
+    let initialFilteredPoints = [];
+    if (selectedFiltersOnLoad.length === 0) {
+        initialFilteredPoints = recyclingPoints;
+    } else {
+        initialFilteredPoints = recyclingPoints.filter(point =>
+            selectedFiltersOnLoad.some(filter => point.type.includes(filter))
+        );
+    }
+    addMarkers(initialFilteredPoints);
 });
