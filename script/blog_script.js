@@ -9,7 +9,7 @@ fetch('articles.json')
 
     data.forEach(article => {
       const card = document.createElement('div');
-      card.className = 'blog-card'; 
+      card.className = 'blog-card';
       card.innerHTML = `
         <img src="${article.image}" alt="${article.title}" class="blog-image">
         <h3 class="blog-title">${article.title}</h3>
@@ -41,5 +41,94 @@ document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('theme') === 'dark') {
       document.body.classList.add('dark-theme');
     }
+  }
+});
+
+// article filter action
+let allArticles = [];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const articlesContainer = document.getElementById('articlesContainer');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const themeToggle = document.getElementById('theme-toggle');
+
+  fetch('articles.json')
+    .then(response => response.json())
+    .then(data => {
+      allArticles = data;
+      displayArticles(allArticles);
+    })
+    .catch(error => {
+      console.error('Ошибка загрузки статей:', error);
+      if (articlesContainer) {
+        articlesContainer.innerHTML = '<p>Ошибка загрузки статей.</p>';
+      }
+    });
+
+  if (filterButtons) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.dataset.category;
+        playArticles(category); 
+      });
+    });
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-theme');
+    }
+  }
+
+  function displayArticles(articlesToDisplay) {
+    if (!articlesContainer) {
+      console.error("Элемент #articlesContainer не найден");
+      return;
+    }
+    articlesContainer.innerHTML = '';
+
+    if (articlesToDisplay.length === 0) {
+      articlesContainer.innerHTML = '<p>Статьи по данной категории не найдены.</p>';
+      return;
+    }
+
+    articlesToDisplay.forEach(article => {
+      const card = document.createElement('div');
+      card.className = 'blog-card';
+      card.dataset.category = article.category || 'all';
+
+      card.innerHTML = `
+        <img src="${article.image}" alt="${article.title}" class="blog-image">
+        <h3 class="blog-title">${article.title}</h3>
+        <p class="blog-description">${article.summary}</p>
+        <p class="blog-date">${new Date(article.date).toLocaleDateString('ru-RU')}</p>
+        <a href="article.html?id=${article.id}" class="read-more-btn">Читать далее &rarr;</a>
+      `;
+      articlesContainer.appendChild(card);
+    });
+  }
+
+  function playArticles(category) { 
+    let filteredArticles = [];
+    if (category === 'all') {
+      filteredArticles = allArticles;
+    } else {
+      filteredArticles = allArticles.filter(article =>
+        article.category && (Array.isArray(article.category) ? article.category.includes(category) : article.category === category)
+      );
+    }
+    displayArticles(filteredArticles);
   }
 });
