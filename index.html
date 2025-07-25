@@ -20,6 +20,108 @@
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    // Import SDK (ESM)
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    // 🔐 ТВОЯ КОНФИГУРАЦИЯ
+    const firebaseConfig = {
+      apiKey: "AIzaSyApFXk8yP1i92mbTH-RQB67Zq1i8sgTWHI",
+      authDomain: "reviewform-5f898.firebaseapp.com",
+      projectId: "reviewform-5f898",
+      storageBucket: "reviewform-5f898.appspot.com",
+      messagingSenderId: "157753369324",
+      appId: "1:157753369324:web:28a25cb9b8c18a86fcbbc9",
+      measurementId: "G-F9Q1LVDSVZ",
+      databaseURL: "https://reviewform-5f898-default-rtdb.firebaseio.com"
+    };
+
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      const form = document.querySelector('.review-form__body');
+      const container = document.querySelector('.reviews__container');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = form.username.value.trim();
+        const city = form.city.value.trim();
+        const comment = form.comment.value.trim();
+        const consent = form.consent.checked;
+
+        const review = { name, city, comment, show: consent };
+        push(ref(db, 'reviews'), review);
+
+        form.reset();
+        alert("Спасибо за отзыв!");
+      });
+
+      onValue(ref(db, 'reviews'), (snapshot) => {
+        container.innerHTML = "";
+        let count = 0;
+
+        snapshot.forEach(child => {
+          const data = child.val();
+          if (data.show) {
+            const reviewHTML = `
+        <div class="review-card">
+          <img class="review-avatar" src="Assets/profile1.jpg" alt="Profile">
+          <div class="review__content">
+            <p class="review-message">${data.comment}</p>
+            <p class="review-author">${data.name}, ${data.city}</p>
+          </div>
+        </div>
+      `;
+            container.innerHTML += reviewHTML;
+            count++;
+          }
+        });
+
+        if (count === 0) {
+          // Показываем дефолтные 3 отзыва
+          const defaultReviews = [
+            {
+              name: "Мадина",
+              city: "Душанбе",
+              comment: "Repunto стал для меня открытием. Сдаю пластик и стекло регулярно — чувствую, что делаю хоть что-то полезное.",
+              avatar: "Assets/profile1.jpg"
+            },
+            {
+              name: "Алишер",
+              city: "Душанбе",
+              comment: "Очень удобно! Теперь знаю, куда сдавать вторсырье. Спасибо за такую полезную карту, обязательно буду пользоваться!",
+              avatar: "Assets/profile2.jpg"
+            },
+            {
+              name: "Фарзона",
+              city: "Душанбе",
+              comment: "Отличная идея! Сортирую отходы и сдаю в Repunto. Надеюсь, что скоро все больше людей присоединятся.",
+              avatar: "Assets/profile3.jpg"
+            }
+          ];
+
+          defaultReviews.forEach(data => {
+            const reviewHTML = `
+        <div class="review-card">
+          <img class="review-avatar" src="${data.avatar}" alt="Profile">
+          <div class="review__content">
+            <p class="review-message">${data.comment}</p>
+            <p class="review-author">${data.name}, ${data.city}</p>
+          </div>
+        </div>
+      `;
+            container.innerHTML += reviewHTML;
+          });
+        }
+      });
+    });
+
+  </script>
   <title>Document</title>
 </head>
 
@@ -57,7 +159,7 @@
 
       <div class="earth-container">
 
-        <a href="../Repunto/page/map.html" class="clean-btn clean-btn--left" style="display: none;">Открыть карту</a>
+        <a href="./page/map.html" class="clean-btn clean-btn--left" style="display: none;">Открыть карту</a>
 
         <img src="Assets/Dark_Earth.svg" alt="Загрязненная ланета Земля" class="earth-image">
 
@@ -168,7 +270,7 @@
       </div>
 
       <div class="review-form__group review-form__checkbox-group">
-        <input type="checkbox" id="consent" name="consent" class="review-form__checkbox" required>
+        <input type="checkbox" id="consent" name="consent" class="review-form__checkbox">
         <label for="consent" class="review-form__checkbox-label">
           Я согласен(а) на публикацию моего отзыва
         </label>

@@ -337,7 +337,7 @@ a:hover {
   display: flex;
   align-items: center;
   width: 450px;
-  height: auto;
+  min-height: 150px;
   background-color: var(--bg2-color);
   border: var(--main-color) 2px solid;
   border-radius: 50px;
