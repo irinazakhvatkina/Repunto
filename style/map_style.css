@@ -13,6 +13,9 @@
   --bg-color: #FEFBF6;
   --bg2-color: #FBEECC;
   --light-green-color: #ECEFC9;
+   /* fonts */
+   --font-primary: "Cormorant Garamond", sans-serif;
+   --font-secondary: "EB Garamond", sans-serif;
 }
 
 /* Переменные для темной темы */
