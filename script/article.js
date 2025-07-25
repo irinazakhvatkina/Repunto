@@ -1,5 +1,5 @@
 const params = new URLSearchParams(window.location.search);
-const articleId = params.get('id'); 
+const articleId = params.get('id');
 
 fetch('articles.json')
     .then(response => response.json())

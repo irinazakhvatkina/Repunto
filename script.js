@@ -1,4 +1,4 @@
-
+// переход к "чистой" и "загрязнённой" Земле
 let isClean = false;
 
 function toggleEarth() {
@@ -9,7 +9,6 @@ function toggleEarth() {
     }
     isClean = !isClean;
 }
-
 
 function switchToClean() {
     const section = document.querySelector('.hero-section');
@@ -23,17 +22,9 @@ function switchToClean() {
     document.querySelector('.clean-btn--left').style.display = 'inline-block';
     document.querySelector('.clean-btn--right').style.display = 'inline-block';
 
-
-    // Новый фон (гладкий, мягкий градиент)
+    // Добавляем класс для "чистой" Земли
+    section.classList.add('clean-state');
     section.style.transition = 'background 1s ease-in-out';
-    section.style.background = `linear-gradient(
-      to bottom,
-      #FEFBF6 0%,
-      #EEF1F3 28%,
-      #B4C9DE 53%,
-      #EEF1F3 79%,
-      #FEFBF6 100%
-    )`;
 
     // Заголовок: меняем текст + градиентный цвет
     title.textContent = 'ДЕЙСТВОВАТЬ';
@@ -53,7 +44,6 @@ function switchToClean() {
     earthImage.style.transition = 'transform 0.8s ease';
     earthImage.style.transform = 'scale(1.28)';
     earthImage.style.boxShadow = 'none';
-
 
     // Обновляем все описания
     const newDescriptions = [
@@ -97,19 +87,9 @@ function switchToPolluted() {
     document.querySelector('.clean-btn--left').style.display = 'none';
     document.querySelector('.clean-btn--right').style.display = 'none';
 
-
-
-
-    // Фон: возвращаем на тёплый загрязнённый
-    section.style.transition = 'background 1s ease-in-out';
-    section.style.background = `linear-gradient(
-      to bottom,
-      #FEFBF6 0%,
-      #F3F1E7 28%,
-      rgba(214, 215, 191, 0.8) 53%,
-      #F3F1E7 79%,
-      #FEFBF6 100%
-    )`;
+    // Удаляем класс для "чистой" Земли, чтобы вернулся "загрязненный" фон по умолчанию
+    section.classList.remove('clean-state');
+    section.style.transition = 'background 1s ease-in-out'; // Оставляем переход
 
     // Заголовок: возвращаем «ИГНОРИРОВАТЬ»
     title.textContent = 'ИГНОРИРОВАТЬ';

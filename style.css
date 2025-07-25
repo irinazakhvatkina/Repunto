@@ -17,8 +17,134 @@
   --font-secondary: "EB Garamond", sans-serif;
 }
 
+/* Светлая тема - чистая Земля */
+.hero-section.clean-state {
+  background: linear-gradient(
+    to bottom,
+    #FEFBF6 0%,
+    #EEF1F3 28%,
+    #B4C9DE 53%,
+    #EEF1F3 79%,
+    #FEFBF6 100%
+  );
+}
+
+/* Темная тема - чистая Земля */
+.dark .hero-section.clean-state {
+  background: linear-gradient(
+    to bottom,
+    #1d1d1d 0%,
+    #2a2a2a 28%, 
+    #3c3c3c 53%, 
+    #2a2a2a 79%,
+    #1d1d1d 100%
+  );
+}
+
+:root.dark {
+  --main-color: #f0f0f0;
+  --accent-color: #e67e58;
+  --bg-color: #1d1d1d;
+  --bg2-color: #2a2a2a;
+  --light-green-color: #4a634a;
+}
+
+/* Градиент тёмной темы для .hero-section */
+.dark .hero-section {
+  background: linear-gradient(
+    to bottom,
+    #1d1d1d 0%,
+    #222222 28%,
+    #2e2e2e 53%,
+    #222222 79%,
+    #1d1d1d 100%
+  );
+}
+
+/* Тёмная тема для заголовков hero */
+.dark .section-header__title {
+  background-image: linear-gradient(to top, var(--main-color), var(--accent-color));
+}
+
+/* Подписи в hero */
+.dark .section-header__tagline {
+  color: var(--main-color);
+}
+
+/* Земля */
+.dark .earth-image {
+  box-shadow: 0 0 30px #ffffff33;
+}
+
+/* Статистика */
+.dark .statistic-item__description,
+.dark .statistic-item__value {
+  color: var(--main-color);
+}
+
+/* Кнопки */
+.dark .icon-btn {
+  color: var(--main-color);
+}
+
+.dark .icon-btn:hover {
+  color: var(--accent-color);
+}
+
+.dark .clean-btn {
+  background-color: #333;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.dark .clean-btn:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Отзывы */
+.dark .review-card {
+  background-color: var(--bg2-color);
+  border-color: var(--accent-color);
+}
+
+.dark .review__content,
+.dark .review-message,
+.dark .review-author {
+  color: var(--main-color);
+}
+
+/* Форма */
+.dark .review-form__header,
+.dark .review-form__body {
+  color: var(--main-color);
+}
+
+.dark .review-form__input,
+.dark .review-form__textarea {
+  background-color: #333;
+  color: var(--main-color);
+  border-color: var(--accent-color);
+}
+
+.dark .review-form__submit {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Подвал */
+.dark .site-footer__title,
+.dark .site-footer__text,
+.dark .site-footer__tagline,
+.dark .social-link {
+  color: var(--main-color);
+}
+
+
 html {
   scroll-behavior: smooth;
+  transition: background 0.5s ease, color 0.5s ease;
+  
 }
 
 body {
@@ -481,6 +607,7 @@ a:hover {
   font-family: var(--font-primary);
   font-size: 48px;
   font-weight: bold;
+  color: var(--main-color);
 }
 
 .site-footer__text {
@@ -488,6 +615,7 @@ a:hover {
   font-size: 20px;
   font-weight: normal;
   margin: 25px 0px;
+  color: var(--main-color);
 }
 
 .site-footer__content {

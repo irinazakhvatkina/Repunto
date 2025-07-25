@@ -1,3 +1,4 @@
+// Загрузка статей из JSON и отображение их на странице
 fetch('articles.json')
   .then(response => response.json())
   .then(data => {
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.classList.add('active');
 
         const category = button.dataset.category;
-        playArticles(category); 
+        playArticles(category);
       });
     });
   }
@@ -120,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function playArticles(category) { 
+  function playArticles(category) {
     let filteredArticles = [];
     if (category === 'all') {
       filteredArticles = allArticles;

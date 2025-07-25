@@ -16,6 +16,15 @@
     --font-primary: "Cormorant Garamond", sans-serif;
     --font-secondary: "EB Garamond", sans-serif;
   }
+
+  :root.dark {
+    --main-color: #f0f0f0;
+    --accent-color: #e67e58;
+    --bg-color: #1d1d1d;
+    --bg2-color: #2a2a2a;
+    --light-green-color: #4a634a;
+  }
+  
   
   body {
     background: var(--bg-color);
