@@ -53,6 +53,7 @@
     margin-right: 100px;
     position: relative;
     color: var(--main-color); 
+    z-index: 100;
   }
   
   .nav-left {
@@ -66,6 +67,11 @@
     font-size: 20px;
   }
   
+  .nav-links {
+    display: flex; 
+    gap: 25px;
+  }
+
   .nav-logo {
     position: absolute;
     left: 50%;
@@ -102,6 +108,39 @@
   .icon-btn:hover {
     color: var(--accent-color);
   }
+
+  /* Hamburger Menu Styling */
+.hamburger-menu {
+  display: none; /* Hidden by default on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 150; /* Ensure it's above other elements */
+}
+
+.hamburger-menu .bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active state for hamburger (optional: for animation) */
+.hamburger-menu.active .bar:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
 
   /* Blog Section */
 .blog-title { 
@@ -267,3 +306,79 @@
   .back-link:hover {
       text-decoration: underline;
   }
+
+  /* Адаптивная верстка для бургера: 785px и меньше */
+@media screen and (max-width: 785px) {
+  .nav-links {
+      display: none;
+      flex-direction: column; 
+      position: absolute;
+      top: 100%; 
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-color);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      align-items: center;
+      gap: 15px; 
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .hamburger-menu {
+      display: flex; 
+  }
+
+  .nav-right {
+      gap: 15px; 
+  }
+
+  .nav-logo {
+      position: static; 
+      transform: none; 
+      order: 2; 
+      flex-grow: 1;
+      text-align: center;
+  }
+
+  .nav-right .icon-btn {
+      order: unset; 
+  }
+
+  .nav {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 15px;
+    flex-wrap: wrap; 
+  }
+
+  .nav-left, .nav-right {
+      flex: auto; 
+      width: 100%; 
+      justify-content: space-between; 
+  }
+
+  .nav-left {
+      order: 1;
+  }
+
+  .nav-right {
+      order: 3;
+      justify-content: flex-end; 
+      margin-top: -40px;
+
+  }
+
+  .nav-logo {
+      order: 2; 
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+  }
+
+  .nav-links.active {
+      padding: 0;
+  }
+}

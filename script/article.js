@@ -23,3 +23,27 @@ fetch('articles.json')
         document.getElementById('article-content').innerHTML = '<p>Ошибка загрузки статьи.</p>';
         console.error(error);
     });
+
+    // Адаптивная верстка
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelectorAll('.nav-links'); 
+  
+    if (hamburger && navLinks.length > 0) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.forEach(linkContainer => {
+                linkContainer.classList.toggle('active');
+            });
+        });
+        
+        navLinks.forEach(linkContainer => {
+            linkContainer.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.forEach(lc => lc.classList.remove('active'));
+                });
+            });
+        });
+    }
+  });

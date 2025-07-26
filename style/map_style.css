@@ -58,6 +58,7 @@ a:hover {
   margin-left: 100px;
   margin-right: 100px;
   position: relative;
+  z-index: 100;
 }
 
 .nav-left {
@@ -71,6 +72,10 @@ a:hover {
   font-size: 20px;
 }
 
+.nav-links {
+  display: flex; 
+  gap: 25px;
+}
 .nav-logo {
   position: absolute;
   left: 50%;
@@ -98,8 +103,8 @@ a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 25px;
-  color: var(--main-color); /* Иконка в светлой теме будет темной */
+  font-size: 25px; 
+  color: var(--main-color);
   padding: 8px;
   transition: color 0.3s;
 }
@@ -467,3 +472,5 @@ a:hover {
 .dark .next:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
+
+/* Адаптивная верстка для бургера: 785px и меньше */
